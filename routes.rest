@@ -1,0 +1,70 @@
+// LOCALHOST
+###
+GET http://localhost:8080/recipes
+###
+GET http://localhost:8080/recipes/6283e343da2591c68254d4f3
+###
+POST http://localhost:8080/recipes HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "noodles",
+    "instructions": "boil water",
+    "ingredients": "macroni",
+    "equipment": "stove"
+  
+
+}
+
+###
+PUT http://localhost:8080/recipes/6283e3cbbc82e5f1e1dc201d HTTP/1.1
+Content-Type: application/json
+
+{
+     "name": "noodles",
+    "instructions": "boil water",
+    "ingredients": "noodles",
+    "equipment": "stove"
+}
+
+###
+DELETE http://localhost:8080/recipes/6283de4e72fb1096cddb436e HTTP/1.1
+
+
+
+# // heroku
+# ###
+# GET https://use-341-api.herokuapp.com/recipes
+# ###
+# GET https://use-341-api.herokuapp.com/recipes/6269c431fdd5c56c75afd024
+# ###
+# GET https://use-341-api.herokuapp.com/recipes/6269c493fdd5c56c75afd025
+# ###
+# GET https://use-341-api.herokuapp.com/recipes/6269c4c7fdd5c56c75afd026
+# ###
+
+# POST https://use-341-api.herokuapp.com/recipes HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "firstName": "josh",
+#     "lastName": "berry",
+#     "email": "joey.joe@gmail.com",
+#     "favoriteColor": "orange",
+#     "birthday": "020197"
+# }
+
+# ###
+# PUT https://use-341-api.herokuapp.com/recipes/6270124b4b6271b6764be92b HTTP/1.1
+# Content-Type: application/json
+
+# {
+#     "firstName": "rasp",
+#     "lastName": "berry",
+#     "email": "berry.joe@gmail.com",
+#     "favoriteColor": "red",
+#     "birthday": "020197"
+# }
+
+# ###
+# DELETE https://use-341-api.herokuapp.com/recipes/6279518b20dc267077aa93df HTTP/1.1
