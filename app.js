@@ -12,8 +12,8 @@ app
         res.setHeader('Access-Control-Allow-Origin', '*');
         // added next three lines to test frontend
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-        response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        // response.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+        // response.setHeader("Access-Control-Allow-Headers", "Content-Type");
         next();
     })
     .use('/', require('./routes'));
