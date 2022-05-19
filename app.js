@@ -5,6 +5,7 @@ const mongodb = require('./db/connect');
 
 const port = process.env.PORT || 8080;
 const app = express();
+// test this should only apear on image
 
 app
     .use(bodyParser.json())
