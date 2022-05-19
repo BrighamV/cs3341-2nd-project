@@ -1,5 +1,21 @@
 // LOCALHOST
 ###
+
+POST https://api.example.com/user/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="logo.png"
+Content-Type: image/png
+
+< ./logo.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
 GET http://localhost:8080/recipes
 ###
 GET http://localhost:8080/recipes/6283e343da2591c68254d4f3

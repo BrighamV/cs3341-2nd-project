@@ -1,5 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+// const multer = require('multer');
+// const upload = multer({dest: './uploads/'}); 
 
 const getAll = async (req, res, next) => {
     const result = await mongodb.getDB().db().collection('recipe').find();
@@ -24,11 +26,13 @@ const getSingle = async (req,res,next) => {
 
 
 const addOne = async (req,res,next) => {
+    console.log(req.file);
     const contact = {
         name: req.body.name,
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
+        productImage: req.file.path
     
     }
     const result = await mongodb
