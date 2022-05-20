@@ -60,6 +60,9 @@
                 },
                 "equipment": {
                   "example": "any"
+                },
+                "authorName": {
+                  "example": "any"
                 }
               }
             }
