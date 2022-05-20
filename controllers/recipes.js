@@ -29,11 +29,14 @@ const addOne = async (req,res,next) => {
     console.log(req.file);
     const contact = {
         name: req.body.name,
+        hour: req.body.hour,
+        minute: req.body.minute,
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
-        productImage: req.file.path
-    
+        image: req.file.path,
+        authorName: req.body.authorName
+
     }
     const result = await mongodb
     .getDB()
