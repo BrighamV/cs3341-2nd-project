@@ -73,7 +73,7 @@ const editOne = async (req,res,next) => {
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
-        authorName: req.body.equipment
+        authorName: req.body.authorName
     }
     const result = await mongodb
     .getDB()
