@@ -41,9 +41,13 @@ const getSingle = async (req,res,next) => {
 const addOne = async (req,res,next) => {
     const contact = {
         name: req.body.name,
+        hour: req.body.hour,
+        minute: req.body.minute,
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
+        // image: req.body.equipment,
+        authorName: req.body.equipment
     
     }
     const result = await mongodb
@@ -65,9 +69,13 @@ const editOne = async (req,res,next) => {
     const recipeId = new ObjectId(req.params.id);
     const contact = {
         name: req.body.name,
+        hour: req.body.hour,
+        minute: req.body.minute,
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
+        // image: req.body.equipment,
+        authorName: req.body.equipment
     }
     const result = await mongodb
     .getDB()
