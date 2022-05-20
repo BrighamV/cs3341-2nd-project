@@ -2,18 +2,18 @@ const express = require('express');
 const router = express.Router();
 
 
-const contactsController = require('../controllers/recipes');
+const recipesController = require('../controllers/recipes');
 const validation = require('../middleware/validate');
 
-router.get('/', contactsController.getAll);
+router.get('/', recipesController.getAll);
 
-router.get('/:id', contactsController.getSingle);
+router.get('/:id', recipesController.getSingle);
 
-router.post('/', validation.saveRecipe, contactsController.addOne);
+router.post('/', validation.saveRecipe, recipesController.addOne);
 
-router.put('/:id',validation.saveRecipe, contactsController.editOne);
+router.put('/:id',validation.saveRecipe, recipesController.editOne);
 
-router.delete('/:id', contactsController.deleteOne);
+router.delete('/:id', recipesController.deleteOne);
 
 
 
