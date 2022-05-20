@@ -1,22 +1,37 @@
+const res = require('express/lib/response');
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
-    const result = await mongodb.getDB().db().collection('recipe').find();
-    result.toArray().then((lists) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists);
+    mongodb
+        .getDB()
+        .db()
+        .collection('recipe')
+        .find()
+        .toArray((err, lists) => {
+            if (err) {
+                res.status(400).json({ message: err })
+            }
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(lists);
     });
+        
 };
 
 const getSingle = async (req,res,next) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json("Must use a valid recipe id")
+    }
     const recipeId = new ObjectId(req.params.id);
-    const result = await mongodb
+    mongodb
     .getDB()
     .db()
     .collection('recipe')
-    .find({ _id: recipeId });
-    result.toArray().then((lists) => {
+    .find({ _id: recipeId })
+    .toArray((err, lists) => {
+        if (err) {
+            res.status(400).json({ message: err })
+        }
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists[0]);
     });
@@ -44,6 +59,9 @@ const addOne = async (req,res,next) => {
 };
 
 const editOne = async (req,res,next) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json("Must use a valid recipe id")
+    }
     const recipeId = new ObjectId(req.params.id);
     const contact = {
         name: req.body.name,
@@ -71,6 +89,9 @@ const editOne = async (req,res,next) => {
 
 
 const deleteOne = async (req,res,next) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json("Must use a valid recipe id")
+    }
     const recipeId = new ObjectId(req.params.id);
     
     const result = await mongodb

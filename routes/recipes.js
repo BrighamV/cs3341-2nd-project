@@ -1,23 +1,19 @@
 const express = require('express');
 const router = express.Router();
-// const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger.json');
+
 
 const contactsController = require('../controllers/recipes');
+const validation = require('../middleware/validate');
 
 router.get('/', contactsController.getAll);
 
 router.get('/:id', contactsController.getSingle);
 
-router.post('/', contactsController.addOne);
+router.post('/', validation.saveRecipe, contactsController.addOne);
 
-router.put('/:id', contactsController.editOne);
+router.put('/:id',validation.saveRecipe, contactsController.editOne);
 
 router.delete('/:id', contactsController.deleteOne);
-
-// router.use('/api-docs', swaggerUi.serve);
-
-// router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 
 

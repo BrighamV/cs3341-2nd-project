@@ -18,7 +18,8 @@
     "mongoclient": "^1.0.3",
     "mongodb": "^4.6.0",
     "nodemon": "^2.0.16",
-    "swagger-ui-express": "^4.4.0"
+    "swagger-ui-express": "^4.4.0",
+    "validatorjs": "^3.22.1"
   },
   "devDependencies": {
     "swagger-autogen": "^2.21.1"
