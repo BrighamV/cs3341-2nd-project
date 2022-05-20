@@ -22,5 +22,5 @@ const saveRecipe = (req, res, next) => {
 }
 
 module.exports = { 
-  signup
+  saveRecipe
 }
