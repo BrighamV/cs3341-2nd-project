@@ -11,7 +11,10 @@ Content-Type: application/json
     "name": "noodles",
     "instructions": "boil water",
     "ingredients": "macroni",
-    "equipment": "stove"
+    "equipment": [
+        {"name": "pot"},
+        {"name": "pan"}
+    ]
   
 
 }
