@@ -21,9 +21,11 @@ const s3 = new aws.S3({
     signatureVersion: 'v4'
 })
 
-async function generateUploadURL() {
-    const rawBytes = await randomBytes(16)
-    const imageName = rawBytes.toString('hex')
+
+const generateUploadURL = async (req,res,next) => {
+    // const rawBytes = await randomBytes(16)
+    // const imageName = rawBytes.toString('hex')
+    const imageName = "working"
 
     const params = ({
         Bucket: bucketName,
@@ -32,8 +34,14 @@ async function generateUploadURL() {
     })
 
     const uploadURL = await s3.getSignedUrlPromise('putObject', params)
-    return uploaduRL
-}
+    // return uploaduRL
+    // return "yeppie"
+    console.log("here in generate", uploadURL)
+    // res.send({uploadURL})
+    return uploadURL
+
+};
+
 
 module.exports = { 
     generateUploadURL

@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 // import { generateUploadURL } from './s3.js'
-const generateUploadURL = require('./s3')
 
 
 const port = process.env.PORT || 8080;
@@ -33,7 +32,3 @@ mongodb.initDB((err, mongodb) => {
     }
 });
 
-app.get('/s3Url', (req, res) => {
-    const url =  generateUploadURL()
-    res.send({url})
-})
