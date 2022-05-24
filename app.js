@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+// import { generateUploadURL } from './s3.js'
 
 
 const port = process.env.PORT || 8080;
@@ -30,3 +31,4 @@ mongodb.initDB((err, mongodb) => {
         console.log(`DB working and hosted on ${port}`);
     }
 });
+
