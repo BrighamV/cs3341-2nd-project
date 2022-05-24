@@ -61,6 +61,9 @@
                 "equipment": {
                   "example": "any"
                 },
+                "image": {
+                  "example": "any"
+                },
                 "authorName": {
                   "example": "any"
                 }
@@ -135,6 +138,9 @@
                   "example": "any"
                 },
                 "equipment": {
+                  "example": "any"
+                },
+                "image": {
                   "example": "any"
                 },
                 "authorName": {
