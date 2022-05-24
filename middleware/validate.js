@@ -8,6 +8,7 @@ const saveRecipe = (req, res, next) => {
         "instructions": "required|array",
         "ingredients": "required|array",
         "equipment": "array",
+        "image": "string",
         "authorName": "string"
     }
     validator(req.body, validationRule, {}, (err, status) => {
