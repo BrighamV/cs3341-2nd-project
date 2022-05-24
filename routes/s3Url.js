@@ -6,7 +6,7 @@ const generate = require('../middleware/s3');
 
 router.get('/', async (req, res) => {
     const url = await generate.generateUploadURL()
-    console.log("ehre in url", url)
+    // console.log("ehre in url", url)
     res.send({url})
 })
 

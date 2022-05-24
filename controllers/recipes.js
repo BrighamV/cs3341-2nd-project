@@ -46,6 +46,7 @@ const addOne = async (req,res,next) => {
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
+        image: req.body.image,
         authorName: req.body.authorName
     
     }
@@ -73,6 +74,7 @@ const editOne = async (req,res,next) => {
         instructions: req.body.instructions,
         ingredients: req.body.ingredients,
         equipment: req.body.equipment,
+        image: req.body.image,
         authorName: req.body.authorName
     }
     const result = await mongodb
