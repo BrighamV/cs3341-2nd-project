@@ -7,7 +7,7 @@ const generate = require('../middleware/s3');
 router.get('/', async (req, res) => {
     const url = await generate.generateUploadURL()
     // console.log("ehre in url", url)
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
 
     res.send({url})
 })
