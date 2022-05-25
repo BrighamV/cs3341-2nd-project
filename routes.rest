@@ -1,6 +1,6 @@
 // my database
 
-GET http://localhost:8080/recipes/getRecipes/mac/milk/butter
+GET http://localhost:8080/recipes/getRecipes/pineapple/lime
 
 // LOCALHOST
 ###

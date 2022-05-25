@@ -188,6 +188,36 @@
         }
       }
     },
+    "/recipes/getRecipes/{word1}/{word2}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "word1",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "word2",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/s3Url/": {
       "get": {
         "description": "",

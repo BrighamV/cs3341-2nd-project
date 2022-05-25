@@ -18,7 +18,7 @@ router.delete('/:id', recipesController.deleteOne);
 
 // My front end
 
-router.get('/getRecipes/:word1/:word2/:word3', recipesController.getRecipes);
+router.get('/getRecipes/:word1/:word2', recipesController.getRecipes);
 
 
 

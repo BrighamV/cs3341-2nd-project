@@ -128,13 +128,13 @@ const getRecipes = async (req,res,next) => {
     // }
     const first = (req.params.word1);
     const second = (req.params.word2);
-    const third = (req.params.word3);
+    // const third = (req.params.word3);
 
 
     console.log("hello world")
     console.log(first)
     console.log(second)
-    console.log(third)
+    // console.log(third)
 
 
     mongodb
@@ -142,9 +142,8 @@ const getRecipes = async (req,res,next) => {
     .db()
     .collection('recipe')
     // .find({ name: /mac/i  })
-    // .find({ "ingredients.name": RegExp(first, 'i')  })
-    .find({ "ingredients.name": { $all: [RegExp(first, 'i'),  RegExp(second, 'i'), RegExp(third, 'i')]  }})
-    // .find({ingredients: {$elemMatch: {"name": RegExp(first, 'i'), "name": RegExp(second, 'i'), "name": RegExp(third, 'i')}}})
+    .find({ "ingredients.name": { $all: [RegExp(first, 'i'),  RegExp(second, 'i')]  }})
+    // .find({ "ingredients.name": { $all: [RegExp(first, 'i'),  RegExp(second, 'i'), RegExp(third, 'i')]  }})
     .toArray((err, lists) => {
         if (err) {
             res.status(400).json({ message: err })
