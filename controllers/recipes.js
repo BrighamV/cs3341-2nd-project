@@ -119,4 +119,41 @@ const deleteOne = async (req,res,next) => {
 };
 
 
-module.exports = { getAll, getSingle, addOne, editOne, deleteOne}
+
+
+
+const getRecipes = async (req,res,next) => {
+    // if (!ObjectId.isValid(req.params.id)) {
+    //     res.status(400).json("Must use a valid recipe id")
+    // }
+    const first = (req.params.word1);
+    const second = (req.params.word2);
+    const third = (req.params.word3);
+
+
+    console.log("hello world")
+    console.log(first)
+    console.log(second)
+    console.log(third)
+
+
+    mongodb
+    .getDB()
+    .db()
+    .collection('recipe')
+    // .find({ name: /mac/i  })
+    // .find({ "ingredients.name": RegExp(first, 'i')  })
+    .find({ "ingredients.name": { $all: [RegExp(first, 'i'),  RegExp(second, 'i'), RegExp(third, 'i')]  }})
+    // .find({ingredients: {$elemMatch: {"name": RegExp(first, 'i'), "name": RegExp(second, 'i'), "name": RegExp(third, 'i')}}})
+    .toArray((err, lists) => {
+        if (err) {
+            res.status(400).json({ message: err })
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+    });
+};
+
+
+
+module.exports = { getAll, getSingle, addOne, editOne, deleteOne, getRecipes}

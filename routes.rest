@@ -1,6 +1,12 @@
+// my database
+
+GET http://localhost:8080/recipes/getRecipes/mac/milk/butter
+
 // LOCALHOST
 ###
 GET http://localhost:8080/recipes
+
+
 ###
 GET http://localhost:8080/recipes/6283e343da2591c68254d4f3
 ###
