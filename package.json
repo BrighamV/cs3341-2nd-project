@@ -19,6 +19,8 @@
     "mongoclient": "^1.0.3",
     "mongodb": "^4.6.0",
     "nodemon": "^2.0.16",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0",
     "swagger-ui-express": "^4.4.0",
     "util.promisify": "^1.1.1",
     "validatorjs": "^3.22.1"

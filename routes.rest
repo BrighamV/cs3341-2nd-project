@@ -1,3 +1,7 @@
+// oAuth
+
+GET http://localhost:8080/auth/google
+
 // my database
 
 GET http://localhost:8080/recipes/getRecipes/pineapple/lime

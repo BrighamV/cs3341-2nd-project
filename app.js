@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const passportSetup = require('./middleware/passport-setup')
+
 // import { generateUploadURL } from './s3.js'
 
 
