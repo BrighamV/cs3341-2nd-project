@@ -236,17 +236,6 @@
         "responses": {}
       }
     },
-    "/auth/logout": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/google": {
       "get": {
         "description": "",
@@ -259,6 +248,13 @@
       }
     },
     "/auth/google/callback": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/auth/logout": {
       "get": {
         "description": "",
         "parameters": [],
